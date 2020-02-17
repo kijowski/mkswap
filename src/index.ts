@@ -56,4 +56,11 @@ const App = () => {
   }
 }
 
+document.onkeyup = () => {
+  const editor = document.getElementById('input')
+  if (editor != null && editor !== document.activeElement) {
+    editor.focus()
+  }
+}
+
 m.mount(document.body, App)

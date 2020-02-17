@@ -118,6 +118,8 @@ main {
   }
 
   & .modal-box {
+    box-sizing: border-box;
+    max-width: 800px;
     text-align: center;
     padding: 2em 4em 3em 4em;
     background-color: #161f27;
