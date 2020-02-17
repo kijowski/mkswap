@@ -9,6 +9,7 @@ module.exports = {
   extends: "standard-with-typescript",
   rules: {
     "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/restrict-template-expressions": ["error", { allowNumber: true }]
+    "@typescript-eslint/restrict-template-expressions": ["error", { allowNumber: true }],
+    "@typescript-eslint/strict-boolean-expressions": "off"
   }
 };

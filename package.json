@@ -17,6 +17,7 @@
     "since 2017-06"
   ],
   "dependencies": {
+    "@mithril-icons/feather": "1.1.0",
     "mithril": "2.0.4"
   },
   "devDependencies": {
