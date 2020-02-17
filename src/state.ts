@@ -1,3 +1,5 @@
+import { openHelp } from './help'
+
 interface CacheProvider {
   getItem(item: string): string | null
   setItem(key: string, item: string): void
@@ -38,7 +40,8 @@ export const Actions = (state: State) => ({
       state.thoughts.pop()
     }
     state.cache.setItem('thoughts', JSON.stringify(state.thoughts))
-  }
+  },
+  openHelp
 })
 
 export type Actions = ReturnType<typeof Actions>
