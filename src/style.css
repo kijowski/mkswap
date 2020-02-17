@@ -1,25 +1,164 @@
 @import "../node_modules/water.css/dist/dark.standalone.css";
 
 :root {
-    --background-body: #202b38;
-    --background: #161f27;
-    --background-alt: #1a242f;
-    --selection: #161f27;
-    --text-main: #dbdbdb;
-    --text-bright: #ffffff;
-    --text-muted: #717880;
-    --links: #41adff;
-    --focus: #0096bfab;
-    --border: #dbdbdb;
-    --code: #ffbe85;
-    --animation-duration: 0.1s;
-    --button-hover: #324759;
-    --scrollbar-thumb: var(--button-hover);
-    --scrollbar-thumb-hover: rgb(65, 92, 115);
-    --form-placeholder: #a9a9a9;
-    --form-text: #ffffff;
-    --variable: #d941e2;
-    --highlight: #efdb43;
-    --select-arrow: url("data:image/svg+xml;charset=utf-8, %3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23efefef'%3E %3Cpath d='M115.3, 1.6 C113.7, 0 111.1, 0 109.5, 1.6 L58.5, 52.7 L7.4, 1.6 C5.8, 0 3.2, 0 1.6, 1.6 C0, 3.2 0, 5.8 1.6, 7.4 L55.5, 61.3 C56.3, 62.1 57.3, 62.5 58.4, 62.5 C59.4, 62.5 60.5, 62.1 61.3, 61.3 L115.2, 7.4 C116.9, 5.8 116.9, 3.2 115.3, 1.6Z'/%3E %3C/svg%3E");
+  --background-body: #202b38;
+  --background: #161f27;
+  --background-alt: #1a242f;
+  --selection: #161f27;
+  --text-main: #dbdbdb;
+  --text-bright: #ffffff;
+  --text-muted: #717880;
+  --links: #41adff;
+  --focus: #0096bfab;
+  --border: #dbdbdb;
+  --code: #ffbe85;
+  --animation-duration: 0.1s;
+  --button-hover: #324759;
+  --scrollbar-thumb: var(--button-hover);
+  --scrollbar-thumb-hover: rgb(65, 92, 115);
+  --form-placeholder: #a9a9a9;
+  --form-text: #ffffff;
+  --variable: #d941e2;
+  --highlight: #efdb43;
+  --select-arrow: url("data:image/svg+xml;charset=utf-8, %3C?xml version='1.0' encoding='utf-8'?%3E %3Csvg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' height='62.5' width='116.9' fill='%23efefef'%3E %3Cpath d='M115.3, 1.6 C113.7, 0 111.1, 0 109.5, 1.6 L58.5, 52.7 L7.4, 1.6 C5.8, 0 3.2, 0 1.6, 1.6 C0, 3.2 0, 5.8 1.6, 7.4 L55.5, 61.3 C56.3, 62.1 57.3, 62.5 58.4, 62.5 C59.4, 62.5 60.5, 62.1 61.3, 61.3 L115.2, 7.4 C116.9, 5.8 116.9, 3.2 115.3, 1.6Z'/%3E %3C/svg%3E");
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+
+  & .topbar {
+    display: flex;
+    align-items: center;
+
+    & input {
+      flex: 1;
+    }
   }
-  
+
+  & p {
+    transition: opacity 0.5s ease-in;
+    color: var(--text-bright);
+    margin: 15px;
+    font-size: 1.4em;
+
+    &.exit {
+      animation: p-exit 0.5s;
+    }
+  }
+
+  & p:first-of-type {
+    animation: p-entry 1.0s;
+  }
+
+  & p:nth-of-type(2) {
+    opacity: 0.9;
+  }
+
+  & p:nth-of-type(3) {
+    opacity: 0.8;
+  }
+
+  & p:nth-of-type(4) {
+    color: var(--text-main);
+    opacity: 0.7;
+  }
+
+  & p:nth-of-type(5) {
+    color: var(--text-main);
+    opacity: 0.6;
+  }
+
+  & p:nth-of-type(6) {
+    color: transparent;
+    text-shadow: 0 0 2px var(--text-main);
+    opacity: 0.5;
+  }
+
+  & p:nth-of-type(7) {
+    color: transparent;
+    text-shadow: 0 0 3px var(--text-main);
+    opacity: 0.4;
+  }
+
+  & p:nth-of-type(8) {
+    color: transparent;
+    text-shadow: 0 0 4px var(--text-main);
+    opacity: 0.3;
+  }
+
+  & p:nth-of-type(9) {
+    color: transparent;
+    text-shadow: 0 0 5px var(--text-main);
+    opacity: 0.2;
+  }
+
+  & p:nth-of-type(10) {
+    color: transparent;
+    text-shadow: 0 0 5px var(--text-main);
+    opacity: 0.1;
+  }
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #161f27af;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s;
+  animation: fade-in 0.5s;
+
+  &.hide {
+    animation: fade-out 0.5s;
+  }
+
+  & .modal-box {
+    text-align: center;
+    padding: 2em 4em 3em 4em;
+    background-color: #161f27;
+    border: var(--text-muted) 1px solid;
+  }
+}
+
+@keyframes p-entry {
+  from {
+    margin-top: -1em;
+    opacity: 0;
+  }
+
+  to {
+    margin-top: 15px;
+    opacity: 1;
+  }
+}
+
+@keyframes p-exit {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
