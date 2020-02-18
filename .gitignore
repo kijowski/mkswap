@@ -106,3 +106,6 @@ public
 
 # Init script
 init.sh
+
+localhost.crt
+localhost.key

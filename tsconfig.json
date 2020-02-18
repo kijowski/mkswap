@@ -17,5 +17,5 @@
     },
     "typeRoots": ["node_modules/@types","typings"]
   },
-  "include": ["src", "typings"],
+  "include": ["src", "typings", "webpack.*.js"],
 }
