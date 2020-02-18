@@ -5,18 +5,19 @@ import './style.css'
 import { Actions, State } from './state'
 
 const ThoughtInput: m.Component<{actions: Actions}> = {
-  view: ({ attrs: { actions } }) => m('input#input[type="text"][placeholder="Capture thought"]',
-    {
-      onkeydown: (ev: KeyboardEvent) => {
-        if (ev.code === 'Enter' && ev.target != null) {
-          const input: HTMLInputElement = (ev.target as HTMLInputElement)
-          if (input.value !== '') {
-            actions.add(input.value)
-            input.value = ''
+  view: ({ attrs: { actions } }) =>
+    m('input#input[type="text"][placeholder="Capture thought"][aria-label="Capture thought"]',
+      {
+        onkeydown: (ev: KeyboardEvent) => {
+          if (ev.code === 'Enter' && ev.target != null) {
+            const input: HTMLInputElement = (ev.target as HTMLInputElement)
+            if (input.value !== '') {
+              actions.add(input.value)
+              input.value = ''
+            }
           }
         }
-      }
-    })
+      })
 }
 
 const Thought: m.Component<{text: string}> = {

@@ -52,7 +52,8 @@ module.exports = {
         appDescription: 'Externalize you short term memory',
         developerName: 'Michał Kijowski',
         developerURL: 'https://kijowski.dev',
-        display: 'standalone'
+        display: 'standalone',
+        start_url: '/'
       }
     }),
     // new WebpackPwaManifest({
