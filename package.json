@@ -4,13 +4,14 @@
   "description": "Externalize you short term memory",
   "scripts": {
     "start": "webpack-dev-server --open --config webpack.dev.config.js",
-    "clean": "rimraf ./public .parcel-cache",
+    "clean": "rimraf ./public",
     "build": "webpack --config webpack.prod.config.js",
     "rebuild": "npm run clean && npm run build",
     "test": "jest"
   },
   "main": "public/index.html",
   "keywords": [],
+  "sideEffects": false,
   "author": "Michał Kijowski <michal@kijowski.dev> (https://kijowski.dev)",
   "license": "MIT",
   "browserslist": [

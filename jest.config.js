@@ -1,13 +1,13 @@
 module.exports = {
   roots: ['src'],
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
+    '^.+\\.tsx?$': 'ts-jest'
   },
   testRegex: '((\\.|/)(test|spec))\\.(tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
   moduleNameMapper: {
-    '^~/(.*)': '<rootDir>/$1',
+    '^~/(.*)': '<rootDir>/$1'
   },
   collectCoverage: false,
-  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/node_modules/**', '!**/vendor/**'],
-};
+  collectCoverageFrom: ['src/**/*.{ts,tsx}', '!**/node_modules/**', '!**/vendor/**']
+}
