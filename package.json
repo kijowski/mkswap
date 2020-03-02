@@ -11,7 +11,9 @@
   },
   "main": "public/index.html",
   "keywords": [],
-  "sideEffects": false,
+  "sideEffects": [
+    "src/style.css"
+  ],
   "author": "Michał Kijowski <michal@kijowski.dev> (https://kijowski.dev)",
   "license": "MIT",
   "browserslist": [
