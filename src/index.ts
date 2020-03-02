@@ -1,8 +1,9 @@
 import m from 'mithril'
 import { HelpCircle } from '@mithril-icons/feather'
 import { renderHelpModal } from './help'
-import './style.css'
 import { Actions, State } from './state'
+// import './style.css'
+require('./style.css')
 
 const ThoughtInput: m.Component<{actions: Actions}> = {
   view: ({ attrs: { actions } }) =>
